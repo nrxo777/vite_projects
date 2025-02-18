@@ -76,12 +76,12 @@ function App() {
           </button>
           <button
             onClick={() => {
-              setColor("navy");
+              setColor("salmon");
             }}
             className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
-            style={{ backgroundColor: "navy" }}
+            style={{ backgroundColor: "salmon" }}
           >
-            Navy
+            Salmon
           </button>
         </div>
       </div>

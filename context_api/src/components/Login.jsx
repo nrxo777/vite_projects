@@ -14,22 +14,22 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <h2 className="block mb-2 font-large m-5 text-white">Login</h2>
-      <div className="flex">
+      <div className=" flex flex-row items-center">
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="User Name"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block p-2.5 m-5 w-55 flex-none"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block p-2.5 m-5"
         />
         <input
           type="text"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block p-2.5 m-5 w-55 flex-none"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block p-2.5 m-5"
         />
       </div>
 

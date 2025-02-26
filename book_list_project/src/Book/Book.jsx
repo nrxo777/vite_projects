@@ -9,6 +9,26 @@ const Book = (props) => {
     { id: 5, book_name: "Bleach", writer: "Kubo" },
   ]);
 
+  const change_bookname_using_input = (event, index) => {
+    const update_book = books.map((book, i) => {
+      if (i === index) {
+        return { ...book, book_name: event.target.value };
+      }
+      return book;
+    });
+    setBooks(update_book);
+  };
+
+  const change_writer_using_input = (event, index) => {
+    const update_book = books.map((book, i) => {
+      if (i === index) {
+        return { ...book, writer: event.target.value };
+      }
+      return book;
+    });
+    setBooks(update_book);
+  };
+
   const delete_book = (index) => {
     let filter_book = books.filter((book, i) => i !== index);
     setBooks(filter_book);
@@ -21,16 +41,31 @@ const Book = (props) => {
         className="border rounded-xl border-orange-500 text-center m-10 mx-20 p-4 text-xl "
       >
         <h3>
-          <span className="text-orange-300">Book Name: {book.book_name}</span>
+          Book Name: <span className="text-orange-300">{book.book_name}</span>
         </h3>
         <h4>
-          <span className="text-orange-300">Writer: {book.writer}</span>
+          Writer: <span className="text-orange-300">{book.writer}</span>
         </h4>
+        <input
+          type="text"
+          className="border bg-white text-orange-900 rounded-xl m-2 p-2"
+          placeholder="Enter Book Name"
+          onChange={(event) => change_bookname_using_input(event, index)}
+          value={book.book_name}
+        />
+        <input
+          type="text"
+          className="border bg-white text-orange-900 rounded-xl m-2 p-2"
+          placeholder="Enter Book Name"
+          onChange={(event) => change_writer_using_input(event, index)}
+          value={book.writer}
+        />
         <button
           className="border bg-amber-700 rounded-xl m-2 p-2 cursor-pointer"
           onClick={() => delete_book(index)}
         >
-          Delete
+          {" "}
+          Delete{" "}
         </button>
       </div>
     );

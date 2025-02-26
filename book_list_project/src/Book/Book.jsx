@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 const Book = (props) => {
   const [books, setBooks] = useState([
-    { book_name: "Make Out", writer: "Jiraya" },
-    { book_name: "Shoe Dog", writer: "Phill Knight" },
-    { book_name: "Naruto", writer: "Kishimoto" },
-    { book_name: "One Piece", writer: "Oda" },
-    { book_name: "Bleach", writer: "Kubo" },
+    { id: 1, book_name: "Make Out", writer: "Jiraya" },
+    { id: 2, book_name: "Naruto", writer: "Kishimoto" },
+    { id: 3, book_name: "One Piece", writer: "Oda" },
+    { id: 4, book_name: "Bleach", writer: "Kubo" },
+    { id: 5, book_name: "Bleach", writer: "Kubo" },
   ]);
 
   const delete_book = (index) => {
@@ -17,7 +17,7 @@ const Book = (props) => {
   const books_state = books.map((book, index) => {
     return (
       <div
-        key={book.book_name}
+        key={book.id}
         className="border rounded-xl border-orange-500 text-center m-10 mx-20 p-4 text-xl "
       >
         <h3>

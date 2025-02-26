@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Book = (props) => {
+const CodeBook = (props) => {
   const [books, setBooks] = useState([
     { id: 1, book_name: "Make Out", writer: "Jiraya" },
     { id: 2, book_name: "Naruto", writer: "Kishimoto" },
@@ -71,5 +71,24 @@ const Book = (props) => {
     );
   });
   return <div>{books_state}</div>;
+};
+
+const Book = () => {
+  let [showbooks, setShowbooks] = useState(false);
+
+  function toggle_books() {
+    setShowbooks(!showbooks);
+  }
+  return (
+    <>
+      <button
+        className="border bg-amber-700 rounded-xl m-4 p-2 items-center cursor-pointer"
+        onClick={toggle_books}
+      >
+        TOGGLE BOOKS
+      </button>
+      {showbooks ? <CodeBook /> : null}
+    </>
+  );
 };
 export default Book;
